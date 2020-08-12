@@ -1,16 +1,21 @@
 package tw.sheng.controller;
 
 
+import org.apache.catalina.User;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 
 @Controller
-public class LoginController {
+public class MainController {
 
     @RequestMapping(value = {"/","/index"}, method = {RequestMethod.POST, RequestMethod.GET})
     public String index(HttpServletRequest request){
@@ -52,5 +57,6 @@ public class LoginController {
     public String Html404(HttpServletRequest request){
         return "404";
     }
+
 
 }
